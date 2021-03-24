@@ -1,0 +1,57 @@
+main{
+    width: 80%;
+    margin: auto;
+    border: 2px solid rgb(224, 7, 25);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.example-card {
+    padding: 0;
+    
+     img{
+     float: left;
+ }
+    mat-card-content{
+        float: left;
+        padding-left: 0px;
+        width: 40%;
+        height: 200px;
+        border: 1px solid rgb(12, 25, 199);
+        border-radius: 10px;
+        text-align: center;
+        button{
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            background-color: rgb(52, 231, 7);
+            &:hover{
+                background-color: rgb(224, 21, 21);
+                color: black;
+            }
+        }
+    }
+  }
+
+  br{
+      clear: both;
+  }
+  
+  
+  mat-drawer-content {
+    padding: 0;
+    align-items:center;
+  }
+  mat-drawer{
+      position: absolute;
+      right: 0;
+      width: 30%;
+  }
+
+  .table{
+      width: 90%;
+      margin: auto;
+      border: 2px solid rgb(161, 158, 158);
+      border-radius: 5px;
+  }
+  

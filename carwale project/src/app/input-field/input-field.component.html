@@ -1,0 +1,44 @@
+<!-- city selection -->
+<form [style.display]="toggle" class="example-form">
+    <mat-form-field class="example-full-width">
+
+      <mat-label>CHOOSE CITY</mat-label>
+      <input type="text" [(ngModel)]="userinput" (keyup)="getCity(userinput)" required
+             aria-label="cities"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete  #auto="matAutocomplete">
+        <div *ngIf = "options">
+        <mat-option *ngFor="let option of options" [value]="option.result">
+          {{option.result}}
+        </mat-option>
+      </div>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <!-- user input details -->
+<div *ngIf="userinput">
+  <button [style.display]="btn" (click)="chooseNamefield()">NEXT</button>
+  <form>
+    <fieldset  [style.display]="inputToggle">
+
+      <legend>Hundai</legend>
+      <label for="fullname"> Full Name : </label><br>
+      <input type="text" [(ngModel)]="user.name" name="fullname" autocomplete="off"/>
+      {{(!user.name) && !(user.name.length > 5)? "Please Enter Valid Name" : ""}}<br><br>
+      <label for="ph_no"> Phone Number : </label><br>
+      <input type="text" [(ngModel)] = "user.ph_no" name="ph_no" required autocomplete="off"/><br><br>
+      <label for="email"> E-Mail ID</label><br>
+      <input type="email" [(ngModel)] = "user.Email" name="email" required autocomplete="off"/><br><br>
+      <button type="submit" [style.display]="btn2" (click)="greetbtn()">Submit</button>
+    </fieldset>
+  </form> 
+</div>
+<div [style.display]="greet">
+  <h3>Thank you {{user.name}} !</h3>
+  <p>A car consultant would get in touch with <br> you shortly with assistance on your purchase.</p>
+  <button [style.display]="btn3" (click)="backAgain()">BACK</button>
+</div>
+

@@ -1,0 +1,54 @@
+<main>
+  <mat-drawer-container class="example-container" [hasBackdrop]="'true'">
+    <mat-drawer #drawer  [mode]="'over'">
+      
+       <app-input-field></app-input-field>
+
+
+    </mat-drawer>
+    
+    <mat-drawer-content> 
+      
+  <mat-card class="example-card">
+      <mat-card-header style="padding: 5px;margin-bottom: 4px;">
+        <img src="https://s0.2mdn.net/3239739/01112021-214629325-970x90.jpg" 
+        alt="Advertisement" bordor="0" width="98%" height="90" style="display:block; margin:0px auto;">
+        <br>
+      </mat-card-header>
+      <img src="../assets/tata-nexon-right-front-three-quarter3.webp" alt="Tata-Nexon"
+      width="50%" height="300px">
+
+      <mat-card-content>
+          <h1>₹ 7.20 Lakh</h1><br>
+          <button (click)="drawer.toggle()">march month offer</button>
+
+          <button (click)="opencusDetails()">display  customer orders</button>
+          </mat-card-content>
+ <mat-card-content [style.display] = "customers">
+          <!-- <button mat-raised-button (click)=>Toggle drawer</button>  -->
+          <div>
+            <table class="table">
+              <thead class="table">
+                <tr>
+                <th> Id</th>
+                <th>Name </th>
+                <th>Phone </th>
+                <th>E-mail </th>
+              </tr>
+              </thead>
+              <tbody class="table"  *ngFor="let user of cusDetails.users">
+                <tr class="table">
+                  <td>{{user.id}}</td>
+                  <td>{{user.name}}</td>
+                  <td>{{user.ph_no}}</td>
+                  <td>{{user.Email}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </mat-card-content>
+    </mat-card>      
+     </mat-drawer-content> 
+  </mat-drawer-container>
+
+</main>
